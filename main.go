@@ -37,13 +37,11 @@ Flags:
 		log.Fatal(err)
 	}
 	defer func() {
-		// Close the spreadsheet.
 		if err := f.Close(); err != nil {
 			log.Fatal(err)
 		}
 	}()
 
-	// Get all the rows in the Sheet1.
 	rows, err := f.GetRows(*sheet)
 	if err != nil {
 		log.Fatal(err)
